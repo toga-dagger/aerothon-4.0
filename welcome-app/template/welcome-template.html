@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="/static/stylesheets/welcome-template.css">
+
+         <!-- The welcome struct (shown in the main.go code) is received within the HTML and we just need to use the . operator and retrieve the information we want -->
+         <title>Aerothon 4.0 - Team FULL_TOGA</title>
+   </head>
+   <body>
+      <!-- <div class="welcome center">Welcome {{.Name}}, it is {{.Time}}</div> -->
+      <p><b><center>Aerothon 4.0 - Team FULL_TOGA</center></b></p>
+      <div class="dropdown_a">
+         <button>Select Framework</button>
+         <ul class="active">
+            <li><a href = "#">MEAN Stack</a></li>
+            <li><a href = "#">MERN Stack</a></li>
+            <li><a href = "#">MEVN Stack</a></li>
+            <li><a href = "#">LAMP Stack</a></li>
+            <li><a href = "#">...</a></li>
+         </ul>
+      </div>
+
+      <div class="dropdown_b">
+         <button>Backend</button>
+         <ul class="active">
+            <li><a href = "#">node.js</a></li>
+            <li><a href = "#">...</a></li>
+         </ul>
+      </div>
+
+      <div class="dropdown_c">
+         <button>Frontend</button>
+         <ul class="active">
+            <li><a href = "#">angular.js</a></li>
+            <li><a href = "#">...</a></li>
+         </ul>
+      </div>
+
+      <div class="dropdown_d">
+         <button>Database</button>
+         <ul class="active">
+            <li><a href = "#">MongoDB</a></li>
+            <li><a href = "#">...</a></li>
+         </ul>
+      </div>
+
+      <div class = "button_download"><button>Download</button></div>
+
+      <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script type="text/javascript"></script>
+         $(document).ready(function(){
+            $('button').click(function(){
+               $('ul').toggleClass('active')
+            })
+         }) -->
+   </body>
+</html>
