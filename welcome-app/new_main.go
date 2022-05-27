@@ -107,6 +107,10 @@ var page = `<!DOCTYPE html>
    <select>
    <ul class = "active">
 	  <option value ="node">node.js</option>
+	  <option value ="python">Python</option>
+	  <option value ="ruby">Ruby</option>
+	  <option value ="django">Django</option>
+	  <option value ="firebase">Firebase</option>
 	  <option value ="...">...</option> 
    </ul>
    </select>
@@ -119,6 +123,17 @@ var page = `<!DOCTYPE html>
 	<select>
 	<ul class="active">
 	<option value ="angular">angular.js</option>
+	<option value ="react">react.js</option>
+	<option value ="reactn">react native</option>
+	<option value ="vue">vue.js</option>
+	<option value ="html">HTML</option>
+	<option value ="bootstrap">Bootstrap</option>
+	<option value ="foundation">Foundation</option>
+	<option value ="bulma">Bulma</option>
+	<option value ="materialize">Materialize</option>
+	<option value ="vanilla">Vanilla JS</option>
+	<option value ="Svelte">Svelte</option>
+	<option value ="flutter">Flutter</option>
 	<option value ="...">...</option>
 	</select>
 	</ul>
@@ -131,6 +146,8 @@ var page = `<!DOCTYPE html>
 	<select>
 	<ul class="active">
 	<option value ="mongodb">MongoDB</option>
+	<option value ="mysql">MySQL</option>
+	<option value ="postgre">PostgreSQL</option>
 	<option value ="...">...</option>
 	</select>
 	</ul>
@@ -156,19 +173,19 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		// fmt.Println(r.Form["action"][0])
 		if r.Form["action"][0] == "mean" {
 			// Print the github link for the mean stack template
-			http.Redirect(w, r,fmt.Sprintf("https://github.com/agonxgashi/MEAN-template"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/agonxgashi/MEAN-template"), 302)
 		} else if r.Form["action"][0] == "mern" {
 			// Print the github link for the mern stack template
-			http.Redirect(w, r,fmt.Sprintf("https://github.com/bradwindy/mern-stack-template"), 302)
-			http.Redirect(w, r,fmt.Sprintf("https://github.com/amazingandyyy/mern"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/bradwindy/mern-stack-template"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/amazingandyyy/mern"), 302)
 		} else if r.Form["action"][0] == "mevn" {
 			// Print the github link for the mevn stack template
-			http.Redirect(w, r,fmt.Sprintf("https://github.com/aturingmachine/mevn-stack"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/aturingmachine/mevn-stack"), 302)
 		} else if r.Form["action"][0] == "lamp" {
 			// Print the github link for the lamp stack template
-			http.Redirect(w, r,fmt.Sprintf("https://github.com/teddysun/lamp"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/teddysun/lamp"), 302)
 		} else {
-			http.Redirect(w, r,fmt.Sprintf("Please select a stack"), 302)
+			http.Redirect(w, r, fmt.Sprintf("Please select a stack"), 302)
 		}
 	}
 }
