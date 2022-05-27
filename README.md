@@ -6,7 +6,7 @@ We can install the webapp using the following command:
 ```
 git clone https://github.com/toga-dagger/aerothon-4.0.git
 cd aerothon-4.0
-go run main.go
+go run new_main.go
 ```
 
 ## Authors
