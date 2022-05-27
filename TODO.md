@@ -1,9 +1,8 @@
 ### Todo
 
 - [ ] Create a new list for cross platform development
-- [ ] Research which technology stacks are best for cross platform development
-- [ ] Find a way to interface the go-lang code with the html code: (HTTP:HandleFunc)
-- [ ] Decide if we really need any database to store the data
+- [ ] Recommend react native + node js / Django/Firebase + Mongo DB for cross platform dev 
+- [ ] Choose your own tech stack - warn if incompatible. Mappings are there on Excell Sheet
 
 ### In Progress
 
@@ -12,3 +11,5 @@
 ### Done ✓
 
 - [x] Frontend for the website
+- [x] Research which technology stacks are best for cross platform development
+- [x] Find a way to interface the go-lang code with the html code: (HTTP:HandleFunc)
