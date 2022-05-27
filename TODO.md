@@ -16,4 +16,4 @@
 - [x] Research which technology stacks are best for cross platform development
 - [x] Find a way to interface the go-lang code with the html code: (HTTP:HandleFunc)
 - [x] Choose your own tech stack - warn if incompatible. Mappings are there on Excell Sheet
-- [x]Fork existing github templates to our own 
+- [x] Fork existing github templates to our own 
