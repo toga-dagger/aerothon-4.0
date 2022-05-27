@@ -23,7 +23,7 @@ var page = `<!DOCTYPE html>
   top: 38%;
   left: 20%;
   transform: translate(-50%, -50%);
-  width: auto;
+  width: 100px;
  }
  .dropdown_b
  {
@@ -83,6 +83,13 @@ var page = `<!DOCTYPE html>
 	padding: 10px;
 }
 
+.selstack {
+	margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+	font-size: 18px;
+}
+
 </style>
 <title>Aerothon 4.0 - Team FULL_TOGA</title>
 </head>
@@ -91,7 +98,9 @@ var page = `<!DOCTYPE html>
 <p><b><center>Aerothon 4.0 - Team FULL_TOGA</center></b></p>
 <form action="/upload" method = "get">
 	<div class="dropdown_a">
-	<b>Select Stack</b>
+		<div class = "selstack">
+		<b>Tech. Stack</b>
+		</div>
 	<select name = "action" size = "1" id ="action-choice">
 		<option value ="sel">Create your own stack</option>
 		<option value ="mean">MEAN Stack</option>
