@@ -9,7 +9,74 @@ import (
 var page = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/static/stylesheets/welcome-template.css">
+<style>
+ body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+ }
+ 
+ .dropdown_a
+ {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: auto;
+ }
+
+ .dropdown_b
+ {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+ }
+
+ .dropdown_c
+ {
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+ }
+
+ .dropdown_d
+ {
+  position: absolute;
+  top: 25%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+ }
+
+ .button_download
+   {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+   }
+ 
+ ul
+ {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #ccc;
+    transform-origin: top;
+    transform: perspective(1000px)rotateX(-90deg);
+    transition: 0.5s;
+ }
+ ul.active{
+   transform: perspective(1000px)rotateX(0deg);
+ }
+ ul li{
+    list-style: none;
+ }
+</style>
 <title>Aerothon 4.0 - Team FULL_TOGA</title>
 </head>
 
