@@ -38,4 +38,3 @@ directory paths.*
 
 ___
 
-Feel free to fork this repo or contact me on [Telegram](http://t.me/agonxgashi)
