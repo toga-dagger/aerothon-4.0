@@ -1,6 +1,6 @@
 ### Todo
 
-- [ ] Create a new list for cross platform development
+
 - [ ] Recommend react native + node js / Django/Firebase + Mongo DB for cross platform dev 
 - [ ] Add instructions on homepage
 - [ ] Prototype Presentation 
@@ -8,6 +8,7 @@
 ### In Progress
 
 - [ ] Meeting
+- [ ] Create a new list for cross platform development
 
 ### Done ✓
 
