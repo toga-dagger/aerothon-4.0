@@ -128,6 +128,7 @@ var page = `<!DOCTYPE html>
 		<option value ="mongodb">MongoDB</option>
 		<option value ="mysql">MySQL</option>
 		<option value ="postgre">PostgreSQL</option>
+		<option value ="sqlite">SQLite</option>
 		<option value ="...">...</option>
 	</select>
 	</div>
@@ -149,12 +150,18 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		r.ParseForm()
 		// w.Write([]byte(r.Form["action"][0]))
 		if r.Form["action"][0] == "sel" {
-			if (r.Form["action_c"][0] == "angular" && r.Form["action_b"][0] == "node" && r.Form["action_d"][0] == "mysql") {
-				// Print the github link for the lamp stack template
+			if r.Form["action_c"][0] == "angular" && r.Form["action_b"][0] == "node" && r.Form["action_d"][0] == "mysql" {
+				// intrinsic MEAN with MySQL instead of MongoDB
 				http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/mean_SQL"), 302)
-			} else if (r.Form["action_c"][0] == "angular" && r.Form["action_b"][0] == "node" && r.Form["action_d"][0] == "mongodb") {
-				// Print the github link for the lamp stack template
-				http.Redirect(w, r, fmt.Sprintf("https://github.com/agonxgashi/MEAN-template"), 302)
+			} else if r.Form["action_c"][0] == "angular" && r.Form["action_b"][0] == "node" && r.Form["action_d"][0] == "mongodb" {
+				// intrinsic MEAN (sel + other parameters)
+				http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/mean"), 302)
+			} else if r.Form["action_c"][0] == "bootstrap" && r.Form["action_b"][0] == "ruby" && r.Form["action_d"][0] == "sqlite" {
+				// bootstrap + ruby + SQLite
+				http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/bootstrap_ruby"), 302)
+				// } else if r.Form["action_c"][0] == "django" && r.Form["action_b"][0] == "reactn" && r.Form["action_d"][0] == "mongoDB" {
+				// 	// Cross - Platform
+				// 	http.Redirect(w, r, fmt.Sprintf(""), 302)
 			} else {
 				// The stack is not supported
 				w.Write([]byte("Sorry, this stack is in development"))
@@ -175,7 +182,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 			// Print the github link for the lamp stack template
 			http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/lamp"), 302)
 		} else {
-			http.Redirect(w, r, fmt.Sprintf("Please select a stack"), 302)
+			w.Write([]byte(""))
 		}
 		// In case we have to create our own stack using frontend as Angular, backend as node.js and database as mysql
 	}
@@ -189,4 +196,3 @@ func main() {
 	fmt.Println("Serving on PORT 8080")
 	fmt.Println(http.ListenAndServe(":8080", nil))
 }
-
