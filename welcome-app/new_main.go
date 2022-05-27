@@ -89,19 +89,19 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		// fmt.Println(r.Form["action"][0])
 		if r.Form["action"][0] == "mean" {
 			// Print the github link for the mean stack template
-			w.Write([]byte("https://github.com/agonxgashi/MEAN-template"))
+			http.Redirect(w, r,fmt.Sprintf("https://github.com/agonxgashi/MEAN-template"), 302)
 		} else if r.Form["action"][0] == "mern" {
 			// Print the github link for the mern stack template
-			w.Write([]byte("https://github.com/bradwindy/mern-stack-template"))
-			w.Write([]byte("https://github.com/amazingandyyy/mern"))
+			http.Redirect(w, r,fmt.Sprintf("https://github.com/bradwindy/mern-stack-template"), 302)
+			http.Redirect(w, r,fmt.Sprintf("https://github.com/amazingandyyy/mern"), 302)
 		} else if r.Form["action"][0] == "mevn" {
 			// Print the github link for the mevn stack template
-			w.Write([]byte("https://github.com/aturingmachine/mevn-stack"))
+			http.Redirect(w, r,fmt.Sprintf("https://github.com/aturingmachine/mevn-stack"), 302)
 		} else if r.Form["action"][0] == "lamp" {
 			// Print the github link for the lamp stack template
-			w.Write([]byte("https://github.com/teddysun/lamp"))
+			http.Redirect(w, r,fmt.Sprintf("https://github.com/teddysun/lamp"), 302)
 		} else {
-			w.Write([]byte("Please select a stack"))
+			http.Redirect(w, r,fmt.Sprintf("Please select a stack"), 302)
 		}
 	}
 }
