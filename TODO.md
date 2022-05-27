@@ -3,6 +3,7 @@
 - [ ] Create a new list for cross platform development
 - [ ] Recommend react native + node js / Django/Firebase + Mongo DB for cross platform dev 
 - [ ] Choose your own tech stack - warn if incompatible. Mappings are there on Excell Sheet
+- [ ] Prototype Presentation 
 
 ### In Progress
 
