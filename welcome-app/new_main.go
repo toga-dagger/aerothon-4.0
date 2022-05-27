@@ -14,12 +14,13 @@ var page = `<!DOCTYPE html>
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+	font-size: 15px;
  }
  
  .dropdown_a
  {
   position: absolute;
-  top: 25%;
+  top: 38%;
   left: 20%;
   transform: translate(-50%, -50%);
   width: auto;
@@ -27,7 +28,7 @@ var page = `<!DOCTYPE html>
  .dropdown_b
  {
   position: absolute;
-  top: 25%;
+  top: 38%;
   left: 40%;
   transform: translate(-50%, -50%);
   width: 100px;
@@ -35,7 +36,7 @@ var page = `<!DOCTYPE html>
  .dropdown_c
  {
   position: absolute;
-  top: 25%;
+  top: 38%;
   left: 60%;
   transform: translate(-50%, -50%);
   width: 100px;
@@ -43,7 +44,7 @@ var page = `<!DOCTYPE html>
  .dropdown_d
  {
   position: absolute;
-  top: 25%;
+  top: 38%;
   left: 80%;
   transform: translate(-50%, -50%);
   width: 100px;
@@ -52,7 +53,8 @@ var page = `<!DOCTYPE html>
    {
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 45%;
+	  text-align: center;
    }
  
  ul
@@ -100,7 +102,9 @@ var page = `<!DOCTYPE html>
 	</select> 
 	</div>
 	<div class = "button_download">
+		<center>
 		<button>Template Builder</button>
+		</center>
 	</div>
 	<div class="dropdown_b">
 	<b>Backend</b>
