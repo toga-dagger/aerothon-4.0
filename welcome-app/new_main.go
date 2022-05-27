@@ -72,6 +72,15 @@ var page = `<!DOCTYPE html>
  ul li{
     list-style: none;
  }
+
+ .note {
+	border: 5px solid #FFFF00;
+	text-align: center;
+	top: 38%;
+	font-size: 15px;
+	padding: 10px;
+}
+
 </style>
 <title>Aerothon 4.0 - Team FULL_TOGA</title>
 </head>
@@ -91,7 +100,7 @@ var page = `<!DOCTYPE html>
 	</select> 
 	</div>
 	<div class = "button_download">
-		<button>Download</button>
+		<button>Template Builder</button>
 	</div>
 	<div class="dropdown_b">
 	<b>Backend</b>
@@ -133,6 +142,11 @@ var page = `<!DOCTYPE html>
 	</select>
 	</div>
 </form>
+<div class = "note">
+<center>
+<p><b>Note: </b>On choosing an existing stack, their corresponding technologies are predefined and any modifications made to the front-end, back-end and database drop-downs will be disregarded. </p>
+</center>
+</div>
 </body>
 </html>`
 
