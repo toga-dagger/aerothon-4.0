@@ -24,7 +24,6 @@ var page = `<!DOCTYPE html>
   transform: translate(-50%, -50%);
   width: auto;
  }
-
  .dropdown_b
  {
   position: absolute;
@@ -33,7 +32,6 @@ var page = `<!DOCTYPE html>
   transform: translate(-50%, -50%);
   width: 100px;
  }
-
  .dropdown_c
  {
   position: absolute;
@@ -42,7 +40,6 @@ var page = `<!DOCTYPE html>
   transform: translate(-50%, -50%);
   width: 100px;
  }
-
  .dropdown_d
  {
   position: absolute;
@@ -51,7 +48,6 @@ var page = `<!DOCTYPE html>
   transform: translate(-50%, -50%);
   width: 100px;
  }
-
  .button_download
    {
       position: absolute;
@@ -79,84 +75,65 @@ var page = `<!DOCTYPE html>
 </style>
 <title>Aerothon 4.0 - Team FULL_TOGA</title>
 </head>
-
 <html>
 <body>
 <p><b><center>Aerothon 4.0 - Team FULL_TOGA</center></b></p>
-
-<div class="dropdown_a">
 <form action="/upload" method = "get">
-   <b>Select Stack</b>
-   <select name = "action" size = "1" id ="action-choice">
-   <ul class = "active">
-	  <option value ="mean">MEAN Stack</option>
-	  <option value ="mern">MERN Stack</option>
-	  <option value ="mevn">MEVN Stack</option>
-	  <option value ="lamp">LAMP Stack</option>
-	  <option value ="...">...</option>
-   </select> 
-   </ul>
-</div>
-
-<div class = "button_download"><button>Download</button></div>
-</form>
-
-<div class="dropdown_b">
-<form>
-   <b>Backend</b>
-   <select>
-   <ul class = "active">
-	  <option value ="node">node.js</option>
-	  <option value ="python">Python</option>
-	  <option value ="ruby">Ruby</option>
-	  <option value ="django">Django</option>
-	  <option value ="firebase">Firebase</option>
-	  <option value ="...">...</option> 
-   </ul>
-   </select>
-</form>
-</div>
-
-<div class="dropdown_c">
-<form>
-	<b>Frontend</b>
-	<select>
-	<ul class="active">
-	<option value ="angular">angular.js</option>
-	<option value ="react">react.js</option>
-	<option value ="reactn">react native</option>
-	<option value ="vue">vue.js</option>
-	<option value ="html">HTML</option>
-	<option value ="bootstrap">Bootstrap</option>
-	<option value ="foundation">Foundation</option>
-	<option value ="bulma">Bulma</option>
-	<option value ="materialize">Materialize</option>
-	<option value ="vanilla">Vanilla JS</option>
-	<option value ="Svelte">Svelte</option>
-	<option value ="flutter">Flutter</option>
-	<option value ="...">...</option>
+	<div class="dropdown_a">
+	<b>Select Stack</b>
+	<select name = "action" size = "1" id ="action-choice">
+		<option value ="sel">Create your own stack</option>
+		<option value ="mean">MEAN Stack</option>
+		<option value ="mern">MERN Stack</option>
+		<option value ="mevn">MEVN Stack</option>
+		<option value ="lamp">LAMP Stack</option>
+		<option value ="...">...</option>
+	</select> 
+	</div>
+	<div class = "button_download">
+		<button>Download</button>
+	</div>
+	<div class="dropdown_b">
+	<b>Backend</b>
+	<select name = "action_b" size = "1" id ="action-choice">
+		<option value ="node">node.js</option>
+		<option value ="python">Python</option>
+		<option value ="ruby">Ruby</option>
+		<option value ="django">Django</option>
+		<option value ="firebase">Firebase</option>
+		<option value ="...">...</option> 
 	</select>
-	</ul>
-</form>
-</div>
-
-<div class="dropdown_d">
-<form>
+	</div>
+	<div class="dropdown_c">
+		<b>Frontend</b>
+		<select name = "action_c" size = "1" id ="action-choice">
+			<option value ="angular">angular.js</option>
+			<option value ="react">react.js</option>
+			<option value ="reactn">react native</option>
+			<option value ="vue">vue.js</option>
+			<option value ="html">HTML</option>
+			<option value ="bootstrap">Bootstrap</option>
+			<option value ="foundation">Foundation</option>
+			<option value ="bulma">Bulma</option>
+			<option value ="materialize">Materialize</option>
+			<option value ="vanilla">Vanilla JS</option>
+			<option value ="Svelte">Svelte</option>
+			<option value ="flutter">Flutter</option>
+			<option value ="...">...</option>
+		</select>
+	</div>
+	<div class="dropdown_d">
 	<b>Database</b>
-	<select>
-	<ul class="active">
-	<option value ="mongodb">MongoDB</option>
-	<option value ="mysql">MySQL</option>
-	<option value ="postgre">PostgreSQL</option>
-	<option value ="...">...</option>
+	<select name = "action_d" size = "1" id ="action-choice">
+		<option value ="mongodb">MongoDB</option>
+		<option value ="mysql">MySQL</option>
+		<option value ="postgre">PostgreSQL</option>
+		<option value ="...">...</option>
 	</select>
-	</ul>
+	</div>
 </form>
-</div>
-
 </body>
-</html>
-`
+</html>`
 
 // func handler(w http.ResponseWriter, r *http.Request) {
 // 	template.Must(template.ParseFiles("index.html")).Execute(w, nil)
@@ -167,26 +144,40 @@ func m(w http.ResponseWriter, r *http.Request) {
 }
 
 func upload(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Frontend:", r.FormValue("action_c"), "Backend:", r.FormValue("action_b"), "Database:", r.FormValue("action_d"))
 	if r.Method == "GET" {
 		r.ParseForm()
 		// w.Write([]byte(r.Form["action"][0]))
+		if r.Form["action"][0] == "sel" {
+			if (r.Form["action_c"][0] == "angular" && r.Form["action_b"][0] == "node" && r.Form["action_d"][0] == "mysql") {
+				// Print the github link for the lamp stack template
+				http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/mean_SQL"), 302)
+			} else if (r.Form["action_c"][0] == "angular" && r.Form["action_b"][0] == "node" && r.Form["action_d"][0] == "mongodb") {
+				// Print the github link for the lamp stack template
+				http.Redirect(w, r, fmt.Sprintf("https://github.com/agonxgashi/MEAN-template"), 302)
+			} else {
+				// The stack is not supported
+				w.Write([]byte("Sorry, this stack is in development"))
+			}
+		}
 		// fmt.Println(r.Form["action"][0])
 		if r.Form["action"][0] == "mean" {
 			// Print the github link for the mean stack template
-			http.Redirect(w, r, fmt.Sprintf("https://github.com/agonxgashi/MEAN-template"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/mean"), 302)
 		} else if r.Form["action"][0] == "mern" {
 			// Print the github link for the mern stack template
-			http.Redirect(w, r, fmt.Sprintf("https://github.com/bradwindy/mern-stack-template"), 302)
-			http.Redirect(w, r, fmt.Sprintf("https://github.com/amazingandyyy/mern"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/mern"), 302)
+			// http.Redirect(w, r, fmt.Sprintf("https://github.com/amazingandyyy/mern"), 302)
 		} else if r.Form["action"][0] == "mevn" {
 			// Print the github link for the mevn stack template
-			http.Redirect(w, r, fmt.Sprintf("https://github.com/aturingmachine/mevn-stack"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/mevn"), 302)
 		} else if r.Form["action"][0] == "lamp" {
 			// Print the github link for the lamp stack template
-			http.Redirect(w, r, fmt.Sprintf("https://github.com/teddysun/lamp"), 302)
+			http.Redirect(w, r, fmt.Sprintf("https://github.com/toga-dagger/aerothon-4.0/tree/main/templates/lamp"), 302)
 		} else {
 			http.Redirect(w, r, fmt.Sprintf("Please select a stack"), 302)
 		}
+		// In case we have to create our own stack using frontend as Angular, backend as node.js and database as mysql
 	}
 }
 func main() {
@@ -198,3 +189,4 @@ func main() {
 	fmt.Println("Serving on PORT 8080")
 	fmt.Println(http.ListenAndServe(":8080", nil))
 }
+
