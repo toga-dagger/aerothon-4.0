@@ -85,8 +85,24 @@ func m(w http.ResponseWriter, r *http.Request) {
 func upload(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		r.ParseForm()
-		w.Write([]byte(r.Form["action"][0]))
-		fmt.Println(r.Form["action"])
+		// w.Write([]byte(r.Form["action"][0]))
+		// fmt.Println(r.Form["action"][0])
+		if r.Form["action"][0] == "mean" {
+			// Print the github link for the mean stack template
+			w.Write([]byte("https://github.com/agonxgashi/MEAN-template"))
+		} else if r.Form["action"][0] == "mern" {
+			// Print the github link for the mern stack template
+			w.Write([]byte("https://github.com/bradwindy/mern-stack-template"))
+			w.Write([]byte("https://github.com/amazingandyyy/mern"))
+		} else if r.Form["action"][0] == "mevn" {
+			// Print the github link for the mevn stack template
+			w.Write([]byte("https://github.com/aturingmachine/mevn-stack"))
+		} else if r.Form["action"][0] == "lamp" {
+			// Print the github link for the lamp stack template
+			w.Write([]byte("https://github.com/teddysun/lamp"))
+		} else {
+			w.Write([]byte("Please select a stack"))
+		}
 	}
 }
 func main() {
