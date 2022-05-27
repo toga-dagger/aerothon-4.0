@@ -14,7 +14,7 @@ var page = `<!DOCTYPE html>
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-	font-size: 15px;
+	font-size: 25px;
  }
  
  .dropdown_a
